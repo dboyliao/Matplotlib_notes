@@ -23,6 +23,6 @@ ax2.fill_between(x, 0, y, y < 0, color = 'r', alpha = 0.25)
 ax2.axis('off')
 
 plt.show()
-fig.savefig('regular_plot.jpg')
+fig.savefig('../figs/regular_plot.jpg')
 # Do not use fig.show() since fig.show() is in interative mode
 # which means you can not see the figure since the process terminate immediately.

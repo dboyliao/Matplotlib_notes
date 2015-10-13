@@ -16,4 +16,4 @@ ax.set_ylim(-1.5, 1.5)
 ax.yaxis.set_ticks([])
 
 plt.show()
-fig.savefig("scatter_plot.jpg")
+fig.savefig("../figs/scatter_plot.jpg")
