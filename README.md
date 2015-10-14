@@ -63,8 +63,8 @@ ax1.xaxis.set_label_text('Time')
 ytext = ax1.yaxis.set_label_text('Height')
 ytext.set_rotation(0)                       # horizontal text.
 ytext.set_y(1.1)
-## See [doc](http://matplotlib.org/users/text_props.html) for detail.
 ```
+See [doc](http://matplotlib.org/users/text_props.html) for detail.
 
 ## Contour
 
@@ -100,6 +100,58 @@ plt.show()
 You will see:
 ![contour_demo](figs/contour_demo.jpg)
 
+## Imshow: Show Image in Matplotlib
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+f = lambda x, y: (1 - x/2 + x**5 + y**3)*np.exp(-x**2 - y**2)
+
+x = np.linspace(-3, 3, 40)
+y = np.linspace(-3, 3, 30)
+X, Y = np.meshgrid(x, y)
+Z = f(X, Y)
+
+fig, ax = plt.subplots(1, 1)
+im = ax.imshow(Z, interpolation = 'nearest', cmap = plt.cm.bone, origin = 'lower')
+plt.colorbar(im, shrink = 0.75, alpha = 0.5, ax = ax)
+plt.show()
+```
+
+You will see:
+![](figs/imshow.jpg)
+
+## Pie Plot
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+n = 20
+Z = np.ones(n)
+Z[-1] *= 2
+
+fig, ax = plt.subplots(1, 1)
+
+colors = ['%0.3f' % ((i+0.03)/(n+0.03)) for i in range(n)]
+# gray scale color
+
+explode = [0.05*Z[i] for i in range(n)]
+# explode is used to determine the width between wedges.
+
+ax.pie(Z, 
+       colors = colors, 
+       labels = [str(z) for z in Z.flat], # these labels will be placed around the pie plot.
+       explode = explode,
+       autopct = '%0.5f' ) # autopct is the percentage format to be labeled on the wedge. 
+plt.show()
+
+fig.savefig("../figs/pie_plot.jpg", transparent = True, dpi = 100)
+```
+
+You will see:
+![pie](figs/pie_plot.jpg)
 # Legend
 
 ```{python}
