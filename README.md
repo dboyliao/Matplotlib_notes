@@ -97,6 +97,8 @@ cbar.add_lines(ct2) # Add ct2 to the color bar.
 
 plt.show()
 ```
+You will see:
+![contour_demo](figs/contour_demo.jpg)
 
 # Legend
 
