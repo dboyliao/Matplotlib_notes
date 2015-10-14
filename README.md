@@ -66,9 +66,42 @@ ytext.set_y(1.1)
 ## See [doc](http://matplotlib.org/users/text_props.html) for detail.
 ```
 
+## Contour
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = y = np.arange(-3, 3, 0.01)
+X, Y = np.meshgrid(x, y)
+Z = (X**3 + 2*X**2*Y + X*Y**2 + Y**3)*np.exp(-X**2 - Y**2)
+
+fig, ax = plt.subplots(1, 1)
+ct1 = ax.contourf(X, Y, Z, 10, alpha = 0.75, cmap = plt.cm.bone)
+ct2 = ax.contour(X, Y, Z, ct1.levels[::2], colors = ['r', 'g', 'b', 'y'])
+ax.clabel(ct2, fmt = '%f', colors = ['k'], fontsize = 10)
+ax.title.set_text("contour and contourf")
+ax.xaxis.set_label_text("x")
+ax.yaxis.set_label_text("y", rotation = 0)
+```
+
+### Color Bar
+
+```{python}
+cbar  = plt.colorbar(ct1, ax = ax, orientation = 'horizontal', shrink = 0.75) 
+# make a color bar according to ct1.
+# By default, the orientation is vertical. shrink specify the size of 
+# the colorbar.
+cbar.ax.set_xlabel("z value")
+cbar.add_lines(ct2) # Add ct2 to the color bar.
+
+plt.show()
+```
+
 # Legend
 
 ```{python}
+# See ax.legend.__doc__ for detail.
 ```
 
 # 3D Graph
