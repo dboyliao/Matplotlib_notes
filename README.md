@@ -182,6 +182,7 @@ surf = ax3D.plot_surface(X, Y, Z,
 ct = ax3D.contourf(X, Y, Z, cmap = plt.cm.hot, zdir = 'z', offset = -0.5)
 ax3D.set_zlim(-0.5, Z.max())
 cbar = plt.colorbar(surf, ax = ax3D, shrink = 0.5, aspect = 5)
+# aspect control the width of color bar. The higher of the value, the thiner of the bar.
 ax3D.axis('off')
 plt.show()
 ```
