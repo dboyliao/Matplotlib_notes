@@ -201,3 +201,4 @@ You will see:
 - [Bezier Curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve)
 - [Patch Collections](http://matplotlib.org/examples/api/patch_collection.html)
 - [3D subplots](http://matplotlib.org/examples/mplot3d/mixed_subplots_demo.html)
+- [GridSpec](http://matplotlib.org/users/gridspec.html)
