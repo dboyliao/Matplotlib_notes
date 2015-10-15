@@ -202,3 +202,4 @@ You will see:
 - [Patch Collections](http://matplotlib.org/examples/api/patch_collection.html)
 - [3D subplots](http://matplotlib.org/examples/mplot3d/mixed_subplots_demo.html)
 - [GridSpec](http://matplotlib.org/users/gridspec.html)
+- [fig API](http://matplotlib.org/api/figure_api.html)
