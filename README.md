@@ -62,4 +62,3 @@ plt.show()
 # References
 
 - [Matplotlib Collections](http://matplotlib.org/api/collections_api.html)
-- 
